@@ -44,7 +44,7 @@ public class  splash_screen extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
-                    if(checkPermissionsArray(Permissions.PERMISSIONS)){
+                    if(checkPermissionsArray(Permissions.INTERNET_PERMISSION)){
                         if (isConnected()) {
                             boolean loginstatus = mPref.getLoginStatus();
                             if (loginstatus == false) {
@@ -57,9 +57,9 @@ public class  splash_screen extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             }
-                    }else{
-                        verifyPermissions(Permissions.PERMISSIONS);
-                    }
+                        }else{
+                             verifyPermissions(Permissions.PERMISSIONS);
+                        }
 
                     } else {
                         startActivity(new Intent(splash_screen.this, No_internet.class));
